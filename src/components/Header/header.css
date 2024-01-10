@@ -1,0 +1,115 @@
+.header {
+  display: flex;
+  width: 100%;
+  height: 74px;
+  margin: 0 auto;
+}
+.header_place_homepage {
+  background-color: #073042;
+}
+.header_place_main {
+  background-color: #ffffff;
+}
+.header__logo {
+  background-color: inherit;
+  display: flex;
+  width: 38px;
+  height: 38px;
+  margin: 0;
+}
+.header__link {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.header__link_type_signin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 0 30px;
+  height: 32px;
+  width: 76px;
+  border-radius: 3px;
+  color: black;
+  background-color: rgba(43, 224, 128, 1);
+}
+
+.header__container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 74px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.header__authorization {
+  display: flex;
+  flex-direction: row;
+  max-width: 183px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__authorization_button_signup {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+  margin-right: 30px;
+}
+
+.header__authorization_button_signin {
+  display: flex;
+  background-color: #2be080;
+  width: 76px;
+  height: 32px;
+  text-decoration: none;
+  color: black;
+  border-radius: 3px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__account-icon {
+  width: 100px;
+  height: inherit;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-size: inherit;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+@media screen and (max-width: 769px) {
+  .header__account-icon {
+    display: none;
+  }
+}
+.header__account-icon_place_homepage {
+  background-image: url("../../images/account_homepage.svg");
+}
+
+.header__account-icon_place_main {
+  background-image: url("../../images/account_transparent.svg");
+}
+
+@media screen and (max-width:321px) {
+  .header__container{
+
+  }
+  
+}

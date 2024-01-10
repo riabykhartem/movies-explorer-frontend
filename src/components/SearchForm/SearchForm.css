@@ -1,0 +1,62 @@
+.searchForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.searchForm__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 70px auto 0 auto;
+  padding: 0 0 13px 0;
+  width: 100%;
+  border-bottom: 1px solid #a0a0a0;
+}
+.searchForm__input {
+  color: #a0a0a0;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 34px;
+  border: none;
+  border-radius: 2px;
+  padding: 0;
+  margin: 0;
+}
+
+.searchForm__button {
+  width: 58.65px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: 48px;
+  background-color: #3456f3;
+  font-weight: 500;
+  line-height: 18px;
+  font-size: 11px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.searchForm__checkbox-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+@media screen and (max-width:769px) {
+  .searchForm__container{
+    margin-top: 80px;
+  }
+}
+
+@media screen and (max-width: 321px) {
+  .searchForm{
+    align-items: center;
+  }
+  .searchForm__input{
+    font-size: 18px;
+    max-width: 200px;
+  }
+  
+}

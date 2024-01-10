@@ -1,0 +1,129 @@
+.techs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(245, 245, 245, 1);
+  margin: 0;
+}
+
+.techs__headline {
+  letter-spacing: -0.88px;
+  font-size: 22px;
+  width: 100%;
+  line-height: 27px;
+  margin: 100px 0 0 0;
+  padding: 0 0 23px 0;
+  font-weight: 400;
+  border-bottom: 1px solid #000000;
+}
+.techs__text-container {
+  display: flex;
+  width: 100%;
+  max-width: 460px;
+  margin: 90px auto 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+}
+.techs__title {
+  margin: 0;
+  font-size: 50px;
+  line-height: 58px;
+  letter-spacing: -2px;
+}
+.techs__paragraph {
+  font-size: 14px;
+  line-height: 20px;
+  margin: 26px 0 0 0;
+  text-align: center;
+}
+.techs__techs-list {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 100px auto 100px auto;
+  padding: 0;
+}
+.techs__tech {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin: 0 10px 0 0;
+  height: 60px;
+  width: 90px;
+  background-color: rgba(232, 232, 232, 1);
+}
+
+@media screen and (max-width: 769px) {
+  .techs__headline {
+    margin-top: 90px;
+  }
+  .techs__techs-list {
+    margin-top: 83px;
+  }
+  .techs__text-container {
+    margin-top: 80px;
+  }
+  .techs__paragraph {
+    margin-top: 22px;
+    width: 460px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px; /* 150% */
+    letter-spacing: -0.48px;
+  }
+  .techs__tech {
+    width: 84px;
+    height: 57px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.48px;
+  }
+}
+
+@media screen and (max-width: 321px) {
+  .techs {
+    max-width: calc(100% - 8px);
+    background-color: transparent;
+  }
+  .techs__headline {
+    margin-top: 70px;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: -0.72px;
+  }
+  .techs__text-container {
+    margin-top: 60px;
+  }
+  .techs__title {
+    text-align: center;
+    font-family: Inter;
+    font-size: 30px;
+    line-height: normal;
+    letter-spacing: -1.2px;
+  }
+  .techs__paragraph {
+    width: 100%;
+
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 16px; /* 145.455% */
+    letter-spacing: -0.44px;
+  }
+  .techs__techs-list {
+    justify-content: flex-start;
+    margin-top: 40px;
+    margin-bottom: 70px;
+    flex-wrap: wrap;
+    max-width: 190px;
+  }
+  .techs__tech{
+    margin-top: 10px;
+  }
+}

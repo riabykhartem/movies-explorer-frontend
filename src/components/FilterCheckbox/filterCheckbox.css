@@ -1,0 +1,63 @@
+.filterCheckbox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 32px 0 47px 0;
+}
+.filterCheckbox__invisible-checkbox{
+    display: block;
+    position: absolute;
+    clip-path: inset(0 0 0 0);
+    clip: rect(0 0 0 0);
+    
+   overflow: hidden;
+}
+.filterCheckbox__visible-checkbox{
+    display: inline-block;
+    vertical-align: middle;
+    width: 36px;
+    height: 20px;
+    margin-right: 14px;
+    background-image: url('../../images/smalltumboff.png');
+
+}
+/* выключенный */
+.filterCheckbox__invisible-checkbox:checked+.filterCheckbox__visible-checkbox {
+    background-image: url('../../images/tumbActive.svg');
+
+} /* выбранный */
+
+.filterCheckbox__invisible-checkbox:focus+.filterCheckbox__visible-checkbox {
+    border: 1px solid #2F71E7;
+}
+
+.filterCheckbox__text{
+    color: #000;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    vertical-align: middle;
+}
+@media screen and (max-width: 769px){
+    .filterCheckbox{
+        justify-content: flex-end;
+    }
+    .filterCheckbox__label{
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    .filterCheckbox__visible-checkbox{
+        margin: 0 0 0 16px
+    }
+}
+
+@media screen and (max-width: 321px) {
+    .filterCheckbox{
+        margin-top: 41px;
+    }
+    .filterCheckbox__text{
+        font-size: 11px;
+
+    }
+    
+}

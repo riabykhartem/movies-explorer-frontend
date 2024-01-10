@@ -1,0 +1,45 @@
+.navTab__container{
+    display: flex;
+    margin: 0 auto;
+    flex-direction: row;
+    width: 212px;
+    height: 18px;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 769px) {
+    .navTab__container{
+        display: none;
+    }
+    
+}
+
+.navTab__link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 18px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+    text-decoration: none;
+    color: #000000;
+}
+
+.navTab__link_active {
+    font-weight: 400;
+}
+
+.navTab__container_hidden{
+    display: none;
+}
+
+.navTab__container_place_homepage{
+    color: white;
+}
+.navTab__container_place_movies{
+    color: #000000;
+
+}
