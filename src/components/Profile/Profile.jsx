@@ -20,7 +20,7 @@ export default function Profile({ isLoggedIn }) {
     <>
     <Header isLoggedIn={isLoggedIn} />
 
-    <section className="profile page__content">
+    <main className="profile page__content">
       <h2 className="profile__heading">Привет, Виталий!</h2>
       <form
         className="profile__form"
@@ -83,7 +83,7 @@ export default function Profile({ isLoggedIn }) {
           </NavLink>
         </>
       )}
-    </section>
+    </main>
     </>
   );
 }

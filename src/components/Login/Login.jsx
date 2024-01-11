@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import logo from "../../images/logo.svg";
 import { NavLink } from "react-router-dom";

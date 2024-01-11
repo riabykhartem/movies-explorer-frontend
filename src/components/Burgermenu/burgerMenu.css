@@ -15,8 +15,14 @@
     z-index: 1;
     height: 44px;
     background-color: transparent;
+    background-size: 100%;
     border: none;
+    background-repeat: no-repeat;
     cursor: pointer;
+  }
+  .burger-menu_place_homepage{
+    background-image: url("../../images/burgerMenuWhite.svg");
+
   }
 }
 
@@ -65,6 +71,10 @@
   margin: 621px auto 0 auto;
 }
 @media screen and (max-width:321px){
+  .burger-menu{
+    width: 40px;
+    height: 43px;
+  }
   .burger-menu__container{
     width:100vw;
   }

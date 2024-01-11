@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 import Burgermenu from "../Burgermenu/Burgermenu";
-import logo from "../../images/logo.svg";
 import { useLocation } from "react-router-dom";
 import NavTab from "../NavTab/NavTab";
 export default function Header({ isLoggedIn }) {
@@ -14,11 +13,11 @@ export default function Header({ isLoggedIn }) {
       }`}
     >
       <div className="header__container page__content">
-        <img className="header__logo" src={logo} alt="logo"></img>
+        <NavLink to="/" className="header__logo"/>
         {isLoggedIn ? (
           <>
             <NavTab isLoggedIn={isLoggedIn} />
-            <button
+            <NavLink to="/profile"
               className={`header__account-icon button ${
                 location.pathname === "/"
                   ? "header__account-icon_place_homepage"

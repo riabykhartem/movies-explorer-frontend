@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { NavLink } from "react-router-dom";
 
@@ -20,7 +19,7 @@ const Register = () => {
   };
 
   return (
-    <section className="register">
+    <main className="register">
       <img src={logo} alt="" />
       <h2 className="register__heading">Добро пожаловать!</h2>
       <form className="register__form" onSubmit={handleSubmit(onSubmit)}>
@@ -66,7 +65,7 @@ const Register = () => {
       </form>
       <p className="login__paragraph">Уже зарегистрированы? {<NavLink to="/signin" className="login__navlink">Войти</NavLink>}</p>
 
-    </section>
+    </main>
   );
 };
 

@@ -3,9 +3,9 @@ import MoviesCardList from "../MoviesCardList/MoviesCardList"
 
 export default function Movies(){
     return(
-        <section className="movies page__content">
+        <main className="movies page__content">
             <SearchForm/>
             <MoviesCardList/>
-        </section>
+        </main>
     )
 }

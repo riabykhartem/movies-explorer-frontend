@@ -11,7 +11,7 @@ export default function Footer() {
                 <a href="https://praktikum.yandex.ru/" className="footer__navLink">
                     Яндекс.Практикум
                 </a>
-                <a href="#" className="footer__navLink">
+                <a href="https://youtu.be/HEXWRTEbj1I?si=uQSv-eQegXSiT6LZ&t=3" className="footer__navLink">
                     Github
                 </a>
             </nav>

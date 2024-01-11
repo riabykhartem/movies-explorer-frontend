@@ -45,6 +45,7 @@
   margin: 0;
   padding: 0;
   font-weight: 400;
+  letter-spacing: -0.8px;
 }
 
 .aboutProject__paragraph {
@@ -81,16 +82,23 @@
 }
 .aboutProject__time-subtitle {
   display: flex;
+  margin: 10px 0 0 0;
   justify-content: center;
-  justify-self: bottom;
   align-items: center;
   font-size: 14px;
   line-height: 17px;
   font-weight: 500;
-  margin: 0;
   color: rgba(160, 160, 160, 1);
 }
 @media screen and (max-width: 769px) {
+  .aboutProject__grid-container{
+    grid-gap: 22px 30px;
+  }
+  .aboutProject__paragraph{
+    font-size: 12px;
+line-height: 18px
+  }
+
   .aboutProject__container {
     margin: 90px auto 90px auto;
   }

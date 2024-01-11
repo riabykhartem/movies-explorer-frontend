@@ -75,6 +75,7 @@
 @media screen and (max-width: 321px) {
   .portfolio {
     margin-top: 70px;
+    margin-bottom: 70px;
   }
   .portfolio__headline {
     line-height: 20px; /* 142.857% */
@@ -97,6 +98,9 @@
   .portfolio__link_place_button{
     width: 18px;
     height: 28px;  
-    background-size: contain;
+    background-size: 70%;
+    padding: 0;
+    cursor: pointer;
+
 }
 }
