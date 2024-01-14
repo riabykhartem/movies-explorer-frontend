@@ -1,7 +1,7 @@
 export default function Techs() {
   return (
     <section className="techs">
-      <div className="page__content_section">
+      <div className="page__content">
         <h2 className="techs__headline">Технологии</h2>
         <div className="techs__text-container">
           <h3 className="techs__title">7 технологий</h3>

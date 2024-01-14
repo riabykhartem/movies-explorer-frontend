@@ -12,7 +12,6 @@ export default function Main() {
             <Techs />
             <AboutMe />
             <Portfolio />
-
         </main>
     )
 };

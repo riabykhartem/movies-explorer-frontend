@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 32px 0 61px 0;
+    margin: 32px 0 47px 0;
 }
 .filterCheckbox__invisible-checkbox{
     display: block;
@@ -41,6 +41,7 @@
 @media screen and (max-width: 769px){
     .filterCheckbox{
         justify-content: flex-end;
+        margin-bottom: 60px;
     }
     .filterCheckbox__label{
         display: flex;
@@ -54,6 +55,7 @@
 @media screen and (max-width: 321px) {
     .filterCheckbox{
         margin-top: 41px;
+        margin-bottom: 50px;
     }
     .filterCheckbox__text{
         font-size: 11px;

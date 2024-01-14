@@ -7,11 +7,11 @@ export default function Footer() {
             </p>
             <div className="footer__container_place_bottom">
             <p className="footer__year">©2023</p>
-            <nav className="footer__nav">
-                <a href="https://praktikum.yandex.ru/" className="footer__navLink">
+            <nav className="footer__nav link">
+                <a href="https://praktikum.yandex.ru/" target="_blank" rel="noreferrer" className="footer__navLink">
                     Яндекс.Практикум
                 </a>
-                <a href="https://youtu.be/HEXWRTEbj1I?si=uQSv-eQegXSiT6LZ&t=3" className="footer__navLink">
+                <a href="https://youtu.be/HEXWRTEbj1I?si=uQSv-eQegXSiT6LZ&t=3" target="_blank" rel="noreferrer" className="footer__navLink link">
                     Github
                 </a>
             </nav>

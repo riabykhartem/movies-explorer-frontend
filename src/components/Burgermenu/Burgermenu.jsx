@@ -13,7 +13,7 @@ export default function BurgerMenu() {
   return (
     <>
       <button
-        className={`burger-menu ${isMenuOpen && "burger-menu_open"} ${location.pathname === "/" && 'burger-menu_place_homepage'}`}
+        className={`burger-menu button ${isMenuOpen && "burger-menu_open"} ${location.pathname === "/" && 'burger-menu_place_homepage'}`}
         onClick={handleMenuClick}
       ></button>
 

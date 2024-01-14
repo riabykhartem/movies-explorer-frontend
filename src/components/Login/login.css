@@ -1,140 +1,146 @@
 .login {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    margin: 70px auto 0 auto;
-    width: 100%;
-    max-width: 396px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 70px auto 70px auto;
+  width: 100%;
+  max-width: 396px;
 }
 
-.login__label {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 8px;
+.login__logo {
+  width: 38px;
+  height: 38px;
+  background-image: url("../../images/logo.svg");
 }
 
 .login__heading {
-    font-size: 24px;
-    font-weight: 500;
-    line-height: normal;
-    margin: 40px 0 0 0;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: normal;
+  margin: 40px 0 0 0;
 }
 
 .login__form {
-    margin: 40px 0 0 0;
-    width: 100%;
+  margin: 40px 0 0 0;
+  width: 100%;
 }
 
 .login__label {
-    font-size: 10px;
-    font-weight: 400;
-    line-height: normal;
-    color: #a0a0a0;
-    margin: 6px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: normal;
+  color: #a0a0a0;
+  margin: 6px 0 5px 0;
+}
+.login__label:first-child {
+  margin-top: 0;
 }
 
 .login__input {
-    margin: 5px 0 0 0;
-    padding: 0 0 10px 0;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: normal;
-    border: none;
-    border-bottom: 1px solid #e8e8e8;
+  margin: 5px 0 0 0;
+  padding: 0 0 10px 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  border: none;
+  border-bottom: 1px solid #e8e8e8;
 }
 
 .login__submit-button {
-    background-color: #3456f3;
-    border: none;
-    border-radius: 3px;
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 500;
-    height: 45px;
-    width: 100%;
-    margin: 134px 0 0 0;
+  background-color: #3456f3;
+  border: none;
+  border-radius: 3px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  height: 45px;
+  width: 100%;
+  margin: 203px 0 0 0;
 }
 
 .login__input:focus {
-    outline: none;
-    border-bottom: 1px solid #3456f3;
+  outline: none;
+  border-bottom: 1px solid #3456f3;
 }
 
 .login__error-span {
-    color: #ff3055;
-    font-size: 10px;
-    font-weight: 400;
-    line-height: normal;
+  color: #ff3055;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .login__input_state_error {
-    color: #ff3055;
+  color: #ff3055;
 }
 
 .login__error-container {
-    font-size: 10px;
-    font-weight: 400;
-    line-height: normal;
-    color: #ff3055;
-    height: 12px;
-    margin: 6px 0 0 0;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: normal;
+  color: #ff3055;
+  height: 12px;
+  margin: 6px 0 0 0;
 }
 
 .login__submit-button:disabled {
-    background-color: #f8f8f8;
+  background-color: #f8f8f8;
 }
 
 .login__paragraph {
-    margin: 16px auto 0 auto;
-    color: #a0a0a0;
-    text-align: center;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: normal;
+  margin: 16px auto 0 auto;
+  color: #a0a0a0;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .login__navlink {
-    color: #3456F3;
-    text-align: center;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: normal;
-    text-decoration: none;
+  color: #3456f3;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
 }
 
 @media screen and (max-width: 769px) {
-    .login{
-        margin-top: 232px;
-    }
-    .login__submit-button{
-        margin-top: 200px;
-    }
+  .login {
+    margin-top: 232px;
+    margin-bottom: 232px;
+  }
+  .login__submit-button {
+    margin-top: 200px;
+  }
 }
 
-@media screen and (max-width:321px) {
-    .login{
-        margin-top: 56px;
-        align-items: center;
-    }
-    .login__heading{
-        margin-top: 50px;
-    }
+@media screen and (max-width: 321px) {
+  .login {
+    margin-top: 56px;
+    align-items: center;
+  }
+  .login__heading {
+    margin-top: 50px;
+  }
+  .login__form {
+    max-width: 260px;
+    margin-top: 80px;
+  }
+  .login__submit-button {
+    margin-top: 291px;
+  }
 
-    .login__form{
-        max-width: 260px;
-        margin-top: 74px;
-    }
-    .login__submit-button{
-        margin-top: 297px;
-    }
-    .login__paragraph{
-font-size: 12px;
-line-height: normal;
-    }
-    .login__navlink{
-font-size: 12px;
-font-style: normal;
-line-height: normal;
-    }
+  .login__paragraph {
+    font-size: 12px;
+    line-height: normal;
+  }
+  .login__navlink {
+    font-size: 12px;
+    font-style: normal;
+    line-height: normal;
+  }
 }

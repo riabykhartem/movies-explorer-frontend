@@ -1,43 +1,32 @@
-.page{
-    font-family: "Inter", "Arial", 'sans-serif';
-    background-color:#FFFFFF;
-    margin: 0;
-    padding: 0;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    display: flex;
-    flex-direction: column;
+.page {
+  font-family: "Inter", 'Arial', sans-serif;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
 }
 
 .page__content {
-    max-width: 1140px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0;
-  }
-
-.page__content_section{
-    width: 100%;
-    margin: 0 auto;
-    padding: 0;
-    max-width: 1140px;
+  max-width: calc(100% - 10.93%);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
 }
-  @media screen and (max-width: 769px) {
-    .page__content {
-      max-width: 708px;
-    }
-    .page__content_section{
-      max-width: 668px;
-    }
-    
+
+
+@media screen and (max-width: 769px) {
+  .page__content {
+    max-width: calc(100% - 13.01%);
   }
 
-  @media screen and (max-width: 321px) {
-    .page__content{
-      max-width: 292px;
-    }
-    .page__content_section{
-      max-width: 292px;
+}
 
-    }
+@media screen and (max-width: 321px) {
+  .page__content {
+    max-width: 284px;
   }
+
+}

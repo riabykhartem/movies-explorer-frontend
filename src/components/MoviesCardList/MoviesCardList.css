@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-self: center;
+    align-items: center;
     margin: 70px 0 0 0;
     padding: 0;
     list-style: none;
@@ -37,7 +37,6 @@
     .MoviesCardList__grid-container{
         grid-gap: 30px;
         grid-template-columns: repeat(auto-fill, 339px);
-
     }
     
 }
@@ -45,12 +44,16 @@
 
 @media screen and (max-width: 321px) {
     .MoviesCardList__grid-container{
-        grid-gap: 30px;
+        max-width: 300px;
+        grid-gap: 34px;
         grid-template-columns: repeat(auto-fill, 100%);
 
     }
     .moviesCard__title-container{
         margin-top: 15px;   
+    }
+    .MoviesCardList__button{
+        width: 240px;
     }
     
 }

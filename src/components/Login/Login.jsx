@@ -1,5 +1,4 @@
 import { useForm } from "react-hook-form";
-import logo from "../../images/logo.svg";
 import { NavLink } from "react-router-dom";
 export default function Login() {
   const {
@@ -16,12 +15,13 @@ export default function Login() {
 
   return (
     <section className="login">
-      <img src={logo} alt="" />
+      <NavLink to="/" className="login__logo link" />
       <h2 className="login__heading">Рады видеть!</h2>
       <form className="login__form" onSubmit={handleSubmit(onSubmit)}>
         <label className="login__label ">
           E-mail:
           <input
+            placeholder="pochta@yandex.ru|"
             {...register("email", {
               required: "Это поле нужно заполнить",
               pattern: {
@@ -53,14 +53,21 @@ export default function Login() {
           )}
         </div>
         <button
-          className="login__submit-button"
+          className="login__submit-button button"
           type="submit"
           disabled={!isValid}
         >
           Войти
         </button>
       </form>
-      <p className="login__paragraph">Ещё не зарегистрированы? {<NavLink to="/signup" className="login__navlink">Регистрация</NavLink>}</p>
+      <p className="login__paragraph">
+        Ещё не зарегистрированы?{" "}
+        {
+          <NavLink to="/signup" className="login__navlink link">
+            Регистрация
+          </NavLink>
+        }
+      </p>
     </section>
   );
 }

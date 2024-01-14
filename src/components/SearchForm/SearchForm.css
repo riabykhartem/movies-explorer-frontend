@@ -22,6 +22,8 @@
   border-radius: 2px;
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .searchForm__button {
@@ -53,10 +55,14 @@
 @media screen and (max-width: 321px) {
   .searchForm{
     align-items: center;
+    max-width: 292px;
   }
   .searchForm__input{
     font-size: 18px;
     max-width: 200px;
   }
-  
+  .searchForm__container{
+    margin-top: 84px;
+    padding-bottom: 9px;
+  }
 }

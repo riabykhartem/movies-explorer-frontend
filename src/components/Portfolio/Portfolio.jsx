@@ -1,21 +1,45 @@
+import arrow from "../../images/linkIcon.svg"
 export default function Portfolio() {
   return (
-    <section className="portfolio page__content_section">
+    <section className="page__content portfolio">
       <h2 className="portfolio__headline">Портфолио</h2>
       <ul className="portfolio__links">
-        <a href="https://youtu.be/HEXWRTEbj1I?si=uQSv-eQegXSiT6LZ&t=3" target="_blank" rel="noreferrer" className="portfolio__link" >
-          <h3 className="portfolio__link_place_text">Статичный сайт</h3>
-          <button className="portfolio__link_place_button"></button>
-        </a>
-        <a href="https://youtu.be/HEXWRTEbj1I?si=uQSv-eQegXSiT6LZ&t=3" target="_blank" rel="noreferrer"  className="portfolio__link">
-          <h3 className="portfolio__link_place_text">Адаптивный сайт</h3>
-          <button className="portfolio__link_place_button"></button>
+        <li className="portfolio_list-item">
+          <a
+            href="https://github.com/riabykhartem/how-to-learn"
+            target="_blank"
+            rel="noreferrer"
+            className="portfolio__link link"
+          >
+            <h3 className="portfolio__link_place_text">Статичный сайт</h3>
+            <img src={arrow} className="portfolio__arrow" alt="стрелка ссылки"></img>
+          </a>
+        </li>
+        <li className="portfolio_list-item">
+          <a
+            href="https://github.com/riabykhartem/russian-travel"
+            target="_blank"
+            rel="noreferrer"
+            className="portfolio__link link"
+          >
+            <h3 className="portfolio__link_place_text">Адаптивный сайт</h3>
+            <img src={arrow} className="portfolio__arrow" alt="стрелка ссылки"></img>
+          </a>
+        </li>
 
-        </a>
-        <a href="https://youtu.be/HEXWRTEbj1I?si=uQSv-eQegXSiT6LZ&t=3" target="_blank" rel="noreferrer"  className="portfolio__link">
-          <h3 className="portfolio__link_place_text">Одностраничное приложение</h3>
-          <button className="portfolio__link_place_button"></button>
-        </a>
+        <li className="portfolio_list-item">
+          <a
+            href="https://github.com/riabykhartem/mesto-react"
+            target="_blank"
+            rel="noreferrer"
+            className="portfolio__link link"
+          >
+            <h3 className="portfolio__link_place_text">
+              Одностраничное приложение
+            </h3>
+            <img src={arrow} className="portfolio__arrow" alt="стрелка ссылки"></img>
+          </a>
+        </li>
       </ul>
     </section>
   );

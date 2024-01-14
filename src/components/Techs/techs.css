@@ -65,13 +65,14 @@
   }
   .techs__techs-list {
     margin-top: 83px;
+    margin-bottom: 90px;
   }
   .techs__text-container {
     margin-top: 80px;
   }
   .techs__paragraph {
     margin-top: 22px;
-    width: 460px;
+    max-width: 460px;
     font-size: 12px;
     font-weight: 400;
     line-height: 18px; /* 150% */
@@ -89,7 +90,6 @@
 
 @media screen and (max-width: 321px) {
   .techs {
-    max-width: calc(100% - 8px);
     background-color: transparent;
   }
   .techs__headline {

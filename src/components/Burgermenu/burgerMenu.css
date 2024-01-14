@@ -27,6 +27,8 @@
 }
 
 .burger-menu_open {
+  position: fixed;
+  right: 30px;
   background-image: url("../../images/closeBurgerMenu.svg");
 }
 
@@ -76,7 +78,7 @@
     height: 43px;
   }
   .burger-menu__container{
-    width:100vw;
+    width:100%;
   }
   .burger-menu__navigation{
     margin-top: 99.44px;

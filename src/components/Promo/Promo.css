@@ -32,16 +32,14 @@
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  margin: 75px auto 0 auto;
+  margin-top: 75px;
   padding: 0;
-  max-width: 1140px;
 }
 
 .promo__image {
   display: flex;
   width: 310px;
   height: 304px;
-  align-self: top;
 }
 
 .promo__paragraph {
@@ -64,12 +62,9 @@
   }
 
   .promo__container {
-    margin: 0;
+    margin-top: 140px;
     flex-direction: column-reverse;
     align-items: center;
-  }
-  .promo__image {
-    margin: 140px auto 0 auto;
   }
 
   .promo__paragraph {
@@ -93,23 +88,22 @@
   }
   .promo__container {
     margin-top: 70px;
+    max-width: 301px;
   }
   .promo__image {
     margin: 0;
     width: 210.001px;
     height: 206px;
   }
-  .promo__title{
+  .promo__title {
     margin-top: 44px;
-
     font-size: 30px;
-line-height: 38px; /* 126.667% */
-letter-spacing: -1.2px;
+    line-height: 38px; /* 126.667% */
+    letter-spacing: -1.2px;
   }
   .promo__link {
     width: 129px;
     height: 36px;
     margin-top: 80px;
   }
-
 }

@@ -12,8 +12,8 @@ export default function Header({ isLoggedIn }) {
           : "header_place_main"
       }`}
     >
-      <div className="header__container page__content">
-        <NavLink to="/" className="header__logo"/>
+      <div className="header__container">
+        <NavLink to="/" className="header__logo link"/>
         {isLoggedIn ? (
           <>
             <NavTab isLoggedIn={isLoggedIn} />

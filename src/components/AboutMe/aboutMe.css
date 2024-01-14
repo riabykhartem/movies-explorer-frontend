@@ -40,13 +40,13 @@
 }
 
 .aboutMe__text {
-    margin: 26px 0 0 0;
+  margin: 26px 0 0 0;
   font-weight: 400;
   font-size: 14px;
   line-height: 22px;
 }
 
-.aboutMe__link{
+.aboutMe__link {
   text-decoration: none;
   color: #000000;
   margin: 99px 0 0 0;
@@ -71,58 +71,62 @@
     line-height: 18px; /* 150% */
   }
   .aboutMe__photo {
-    width: 255px;
+    max-width: 255px;
     height: 307px;
   }
-  .aboutMe__name{
+  .aboutMe__name {
     font-size: 40px;
     font-weight: 400;
     line-height: 40px; /* 100% */
     letter-spacing: -1.6px;
   }
-  
+
   .aboutMe__title {
     font-size: 12px;
     font-weight: 500;
     line-height: 18px; /* 150% */
     margin-top: 16px;
   }
-  .aboutMe__link{
+  .aboutMe__link {
     margin-top: 87px;
   }
 }
 
-@media screen and (max-width: 321px) {
-  .aboutMe__headline{
-    margin-top: 70px;
-font-size: 18px;
-letter-spacing: -0.72px;
-border-bottom: 28px 1px #000;
+@media screen and (max-width: 407px) {
+  .aboutMe{
+    max-width: 292px;
   }
-  .aboutMe__main{
+  .aboutMe__headline {
+    margin-top: 70px;
+    font-size: 18px;
+    letter-spacing: -0.72px;
+    border-bottom: 28px 1px #000;
+  }
+  .aboutMe__main {
     margin-top: 60px;
     flex-direction: column-reverse;
   }
-  .aboutMe__text-container{
+  .aboutMe__text-container {
     margin-top: 40px;
   }
-  .aboutMe__photo{
+  .aboutMe__photo {
     width: 100%;
+    max-width: 292px;
     height: 352px;
   }
-  .aboutMe__name{
-font-size: 30px;
-line-height: normal;
-letter-spacing: -1.2px;
+  .aboutMe__name {
+    font-size: 30px;
+    line-height: normal;
+    letter-spacing: -1.2px;
   }
-  .aboutMe__text{
-font-feature-settings: 'clig' off, 'liga' off;
-font-size: 11px;
-font-style: normal;
-font-weight: 400;
-line-height: 16px; /* 145.455% */
+  .aboutMe__text {
+    font-feature-settings: "clig" off, "liga" off;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 145.455% */
   }
-  .aboutMe__link{
+  .aboutMe__link {
     margin-top: 40px;
   }
 }

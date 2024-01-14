@@ -45,10 +45,10 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
+  max-width: calc(100% - 10.94%);
   width: 100%;
   height: 74px;
   margin: 0 auto;
-  position: relative;
 }
 
 .header__authorization {
@@ -98,6 +98,9 @@
   cursor: pointer;
 }
 @media screen and (max-width: 769px) {
+  .header__container{
+    max-width: calc(100% - 7.81%);
+  }
   .header__account-icon {
     display: none;
   }
@@ -112,7 +115,7 @@
 
 @media screen and (max-width:321px) {
   .header__container{
-
+    max-width: calc(100% - 28px);
   }
   
 }
