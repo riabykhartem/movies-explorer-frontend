@@ -36,8 +36,7 @@
 @media screen and (max-width: 769px) {
     .MoviesCardList__grid-container{
         grid-gap: 30px;
-        grid-template-columns: repeat(auto-fill, 339px);
-    }
+        grid-template-columns: repeat(auto-fill, minmax(200px, 339px));}
     
 }
 

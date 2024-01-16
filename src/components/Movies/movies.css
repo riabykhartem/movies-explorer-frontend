@@ -8,7 +8,7 @@
 
 @media screen and (max-width: 769px) {
     .movies{
-        max-width: 300px;
+        max-width: calc(100% - 7.81%);
     }
     
 }

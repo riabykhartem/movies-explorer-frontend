@@ -27,7 +27,14 @@ line-height: normal;
     text-decoration: none;
     font-size: 14px;
     font-weight: 400;
+    margin-bottom: 60px;
 } 
+
+@media screen and (max-width:769px) {
+    .pageNotFound__link{
+        margin-bottom: 222px;
+    }
+}
 
 @media screen and (max-width:321px){
     .pageNotFound__heading{
@@ -40,6 +47,6 @@ line-height: normal;
     .pageNotFound__link{
         margin-top: 284px;
         font-size: 12px;
-
+        margin-bottom: 30px;
     }
 }

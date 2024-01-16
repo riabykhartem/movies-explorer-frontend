@@ -97,10 +97,13 @@
     max-width: 292px;
   }
   .aboutMe__headline {
+    line-height: normal;
+
     margin-top: 70px;
     font-size: 18px;
     letter-spacing: -0.72px;
-    border-bottom: 28px 1px #000;
+    border-bottom: solid 1px #000;
+    padding-bottom: 28px;
   }
   .aboutMe__main {
     margin-top: 60px;

@@ -23,7 +23,6 @@ export default function Header({ isLoggedIn }) {
                   ? "header__account-icon_place_homepage"
                   : "header__account-icon_place_main"
               }`}
-              alt="account"
             />
             <Burgermenu />
           </>
@@ -31,13 +30,13 @@ export default function Header({ isLoggedIn }) {
           <div className="header__authorization">
             <NavLink
               to="/signup"
-              className="header__authorization_button_signup link"
+              className={`header__signup-button ${location.pathname === '/' && 'header__signup-button_place_homepage'} link`}
             >
               Регистрация
             </NavLink>
             <NavLink
               to="/signin"
-              className="header__authorization_button_signin button"
+              className="header__signin-button button"
             >
               Войти
             </NavLink>

@@ -3,12 +3,12 @@
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    src: url('./Inter_Web/Inter-Medium.woff2'),
+    src: url('./Inter_Web/Inter-Medium.woff2');
 }
 /** unactive desctop link */
 @font-face {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
-    src: url('./Inter_Web/Inter-Regular.woff2'),
+    src: url('./Inter_Web/Inter-Regular.woff2');
 }

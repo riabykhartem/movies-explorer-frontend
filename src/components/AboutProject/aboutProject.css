@@ -25,7 +25,7 @@
     "paragraph-left paragraph-right";
   grid-template-columns: repeat(2, auto);
   grid-template-rows: repeat(2, auto);
-  grid-gap: 26px 40px;
+  grid-gap: 26px 30px;
 }
 .aboutProject__title_position_left {
   grid-area: title-left;
@@ -110,7 +110,7 @@
 @media screen and (max-width: 321px) {
   .aboutProject__container {
     margin-top: 70px;
-    margin-bottom: 64px;
+    margin-bottom: 69px;
     max-width: calc(100% - 36px);
   }
   .aboutProject__headline {
@@ -135,7 +135,6 @@
   }
   .aboutProject__paragraph {
     font-size: 11px;
-    line-height: 16px;
     line-height: 16px; /* 145.455% */
   }
   .aboutProject__time-block {
@@ -150,6 +149,7 @@
     line-height: normal;
   }
   .aboutProject__time-subtitle {
+    margin-top: 0;
     font-size: 11px;
     font-weight: 400;
   }

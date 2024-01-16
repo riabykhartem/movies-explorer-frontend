@@ -55,6 +55,7 @@
 
 @media screen and (max-width: 769px) {
     .moviesCard__image{
+        max-width: 339px;
         width: 100%;
         height: 190px;
 

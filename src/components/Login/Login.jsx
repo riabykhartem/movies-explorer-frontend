@@ -40,6 +40,7 @@ export default function Login() {
         <label className="login__label">
           Пароль:
           <input
+          placeholder="••••••••••••••"
             {...register("password", {
               required: "Это поле нужно заполнить",
             })}

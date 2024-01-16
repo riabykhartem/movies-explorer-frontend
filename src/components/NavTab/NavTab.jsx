@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 export default function NavTab({ isLoggedIn }) {
   const location = useLocation();
     return(
-          <nav className={`${isLoggedIn ? "navTab__container" : "navTab__container_hidden"} `}>
+          <nav className={`${isLoggedIn ? "navTab" : "navTab_hidden"} `}>
           <NavLink
             to="/movies"
             className={`navTab__link button ${

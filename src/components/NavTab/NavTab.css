@@ -1,4 +1,4 @@
-.navTab__container{
+.navTab{
     display: flex;
     margin: 0 auto;
     flex-direction: row;
@@ -8,7 +8,7 @@
     padding-left: 58px;}
 
 @media screen and (max-width: 769px) {
-    .navTab__container{
+    .navTab{
         display: none;
     }
     
@@ -19,7 +19,6 @@
     justify-content: center;
     align-items: center;
     height: 18px;
-    font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
     font-size: 13px;
@@ -32,7 +31,7 @@
     font-weight: 400;
 }
 
-.navTab__container_hidden{
+.navTab_hidden{
     display: none;
 }
 
