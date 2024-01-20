@@ -41,7 +41,7 @@
 }
 
 
-@media screen and (max-width: 321px) {
+@media screen and (max-width: 350px) {
     .MoviesCardList__grid-container{
         max-width: 300px;
         grid-gap: 34px;

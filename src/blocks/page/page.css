@@ -30,3 +30,10 @@
   }
 
 }
+
+@media screen and (min-width: 1281px) {
+  .page__content{
+    max-width: 1140px;
+  }
+  
+}
