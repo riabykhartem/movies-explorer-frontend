@@ -56,7 +56,7 @@
   max-width: 640px;
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 823px) {
   .promo__link {
     margin: 92px auto 0 auto;
   }
