@@ -10,6 +10,13 @@
     padding: 0;
 }
 
+.moviesCard__tailer-link{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
 .moviesCard__title-container{
     display: flex;
     flex-direction: row;

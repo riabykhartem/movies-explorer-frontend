@@ -27,9 +27,7 @@
 
 } /* выбранный */
 
-.filterCheckbox__invisible-checkbox:focus+.filterCheckbox__visible-checkbox {
-    border: 1px solid #2F71E7;
-}
+
 
 .filterCheckbox__text{
     color: #000;

@@ -9,6 +9,24 @@
     width: 100%;
 }
 
+.MoviesCardList__button_hidden{
+    display: none;
+}
+.MoviesCardList__not-found-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+}
+.MoviesCardList__not-found{
+    font-size: 24px;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    
+}
 .MoviesCardList__grid-container{
     display: grid;
     justify-content: center;

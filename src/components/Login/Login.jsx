@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { NavLink } from "react-router-dom";
-export default function Login() {
+import mainApi from "../../utils/MainApi";
+export default function Login({ signIn }) {
   const {
     register,
     formState: { errors, isValid },
@@ -10,7 +11,7 @@ export default function Login() {
   });
 
   const onSubmit = (data) => {
-    console.log(data);
+    signIn(data);
   };
 
   return (
@@ -21,7 +22,7 @@ export default function Login() {
         <label className="login__label ">
           E-mail:
           <input
-            placeholder="pochta@yandex.ru|"
+            placeholder="pochta@yandex.ru"
             {...register("email", {
               required: "Это поле нужно заполнить",
               pattern: {
@@ -40,7 +41,7 @@ export default function Login() {
         <label className="login__label">
           Пароль:
           <input
-          placeholder="••••••••••••••"
+            placeholder="••••••••••••••"
             {...register("password", {
               required: "Это поле нужно заполнить",
             })}

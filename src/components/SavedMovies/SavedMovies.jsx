@@ -1,28 +1,31 @@
 import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import { LoadingIndicator } from "../../utils/LoadingIndicator";
+import { useLocation } from "react-router-dom";
 
-export default function Movies({
+export default function SavedMovies({
   movies,
   getFilteredMovies,
-  onLike,
   onDislike,
-  cashedSearchValue,
   handleShortMoviesCheck,
-  shortMoviesChecked,
-  currentUser,
-  savedMovies
+  isChecked,
+  savedMovies,
 }) {
+  const location = useLocation();
+
   return (
     <main className="movies">
       <SearchForm
-        isChecked={shortMoviesChecked}
+        isChecked={isChecked}
         onSubmit={getFilteredMovies}
-        cashedSearchValue={cashedSearchValue}
         handleShortMoviesCheck={handleShortMoviesCheck}
       />
       <LoadingIndicator />
-      <MoviesCardList movies={movies} savedMovies={savedMovies} onLike={onLike} onDislike={onDislike} currentUser={currentUser}/>
+      <MoviesCardList
+        movies={movies}
+        onDislike={onDislike}
+        savedMovies={savedMovies}
+      />
     </main>
   );
 }

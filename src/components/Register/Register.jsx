@@ -1,7 +1,8 @@
 import { useForm } from "react-hook-form";
 import { NavLink } from "react-router-dom";
+import mainApi from "../../utils/MainApi"
 
-const Register = () => {
+const Register = ({signUp}) => {
   const {
     register,
     formState: { errors, isValid },
@@ -11,8 +12,7 @@ const Register = () => {
   });
 
   const onSubmit = (data) => {
-    console.log(data);
-    console.log(errors);
+    signUp(data)
   };
 
   return (

@@ -3,25 +3,23 @@ import { NavLink } from "react-router-dom";
 import Header from "../Header/Header";
 import { useForm } from "react-hook-form";
 
-export default function Profile({ isLoggedIn }) {
+export default function Profile({ isLoggedIn, logOut, currentUser, editProfile }) {
   const [editButtonToggled, setEditButtonToggled] = useState(false);
   const {
     register,
     formState: { errors, isValid },
     handleSubmit,
-  } = useForm({
-    mode: "onSubmit",
-  });
+  } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
-    console.log(errors);
+    editProfile(data);
+    setEditButtonToggled(!editButtonToggled);
   };
   return (
     <>
     <Header isLoggedIn={isLoggedIn} />
 
     <main className="profile page__content">
-      <h2 className="profile__heading">Привет, Виталий!</h2>
+      <h2 className="profile__heading">Привет, {currentUser.name}!</h2>
       <form
         className="profile__form"
         id="a-form"
@@ -35,7 +33,7 @@ export default function Profile({ isLoggedIn }) {
             })}
             className="profile__input profile__input_name"
             type="text"
-            defaultValue="Виталий"
+            defaultValue={currentUser.name}
             disabled={!editButtonToggled}
           />
         </label>
@@ -51,20 +49,18 @@ export default function Profile({ isLoggedIn }) {
             })}
             className="profile__input"
             disabled={!editButtonToggled}
-            defaultValue={"pochta@yandex.ru"}
+            defaultValue={currentUser.email}
           />
         </label>
-      </form>
-      {editButtonToggled ? (
+        {editButtonToggled ? (
         <>
           <div className="profile__error-container">
-            {(errors.name || errors.email) && <span>{ "При обновлении профиля произошла ошибка."}</span>}
+            { errors?.name?.message || errors?.email?.message ? <span>{ "При обновлении профиля произошла ошибка."}</span> : null}
           </div>
           <button
             type="submit"
             form="a-form"
             className="profile__button_type_submit button"
-            disabled={!isValid}
           >
             Сохранить
           </button>
@@ -73,16 +69,19 @@ export default function Profile({ isLoggedIn }) {
         <>
           <button
             className="profile__button_type_edit link"
-            onClick={() => setEditButtonToggled(!editButtonToggled)
+            onClick={() => 
+              setEditButtonToggled(!editButtonToggled)
             }
           >
             Редактировать
           </button>
-          <NavLink to="/signin" className="profile__logout-button link">
+          <NavLink onClick={logOut} to="/signin" className="profile__logout-button link">
             Выйти из аккаунта
           </NavLink>
         </>
       )}
+      </form>
+
     </main>
     </>
   );
