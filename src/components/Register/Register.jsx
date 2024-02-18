@@ -1,8 +1,9 @@
+import {useState } from "react";
 import { useForm } from "react-hook-form";
 import { NavLink } from "react-router-dom";
-import mainApi from "../../utils/MainApi"
 
 const Register = ({signUp}) => {
+  const [lockSubmit, setLockSubmit] = useState(false);
   const {
     register,
     formState: { errors, isValid },
@@ -12,7 +13,9 @@ const Register = ({signUp}) => {
   });
 
   const onSubmit = (data) => {
+    setLockSubmit(true);
     signUp(data)
+    setLockSubmit(false);
   };
 
   return (
@@ -74,7 +77,7 @@ const Register = ({signUp}) => {
         <button
           className="register__submit-button button"
           type="submit"
-          disabled={!isValid}
+          disabled={!isValid && !lockSubmit}
         >
           Зарегистрироваться
         </button>

@@ -57,6 +57,12 @@
   cursor: pointer;
 }
 
+.profile__button_type_edit:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
 .profile__button_type_submit {
   display: flex;
   justify-content: center;

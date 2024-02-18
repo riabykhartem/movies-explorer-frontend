@@ -28,9 +28,6 @@ class MainApi{
             body: JSON.stringify(data)
         })
         .then(this._checkResponse)
-        .catch((err) => {
-            console.log(`при регистрации произошла ошибка ${err}`);
-        })
     }
 
     signIn(data){
@@ -40,9 +37,6 @@ class MainApi{
             body: JSON.stringify(data)
         })
         .then(this._checkResponse)
-        .catch((err) => {
-            console.log(`при авторизации произошла ошибка ${err}`);
-        })
     }
 
     editProfile(data, token){
@@ -55,9 +49,6 @@ class MainApi{
             body: JSON.stringify(data)
         })
         .then(this._checkResponse)
-        .catch((err) => {
-            console.log(`при редактировании профиля произошла ошибка ${err}`);
-        })
     }
 }
 

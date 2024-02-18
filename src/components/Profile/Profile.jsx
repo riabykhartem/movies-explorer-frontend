@@ -4,16 +4,24 @@ import Header from "../Header/Header";
 import { useForm } from "react-hook-form";
 
 export default function Profile({ isLoggedIn, logOut, currentUser, editProfile }) {
+
   const [editButtonToggled, setEditButtonToggled] = useState(false);
   const {
     register,
     formState: { errors, isValid },
     handleSubmit,
-  } = useForm();
+  } = useForm({
+    defaultValues: {
+      name: currentUser.name,
+      email: currentUser.email,
+    },
+    mode: "onChange",
+  });
   const onSubmit = (data) => {
     editProfile(data);
     setEditButtonToggled(!editButtonToggled);
   };
+
   return (
     <>
     <Header isLoggedIn={isLoggedIn} />
@@ -33,7 +41,7 @@ export default function Profile({ isLoggedIn, logOut, currentUser, editProfile }
             })}
             className="profile__input profile__input_name"
             type="text"
-            defaultValue={currentUser.name}
+            placeholder={currentUser.name}
             disabled={!editButtonToggled}
           />
         </label>
@@ -49,7 +57,7 @@ export default function Profile({ isLoggedIn, logOut, currentUser, editProfile }
             })}
             className="profile__input"
             disabled={!editButtonToggled}
-            defaultValue={currentUser.email}
+            placeholder={currentUser.email}
           />
         </label>
         {editButtonToggled ? (
@@ -59,6 +67,7 @@ export default function Profile({ isLoggedIn, logOut, currentUser, editProfile }
           </div>
           <button
             type="submit"
+            disabled={!isValid}
             form="a-form"
             className="profile__button_type_submit button"
           >
@@ -75,7 +84,7 @@ export default function Profile({ isLoggedIn, logOut, currentUser, editProfile }
           >
             Редактировать
           </button>
-          <NavLink onClick={logOut} to="/signin" className="profile__logout-button link">
+          <NavLink onClick={logOut} to="/" className="profile__logout-button link">
             Выйти из аккаунта
           </NavLink>
         </>

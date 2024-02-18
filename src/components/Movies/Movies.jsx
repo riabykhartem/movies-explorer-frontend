@@ -3,26 +3,32 @@ import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import { LoadingIndicator } from "../../utils/LoadingIndicator";
 
 export default function Movies({
+  noMoviesFound,
   movies,
   getFilteredMovies,
   onLike,
   onDislike,
-  cashedSearchValue,
   handleShortMoviesCheck,
   shortMoviesChecked,
   currentUser,
-  savedMovies
+  savedMovies,
 }) {
   return (
     <main className="movies">
       <SearchForm
         isChecked={shortMoviesChecked}
         onSubmit={getFilteredMovies}
-        cashedSearchValue={cashedSearchValue}
         handleShortMoviesCheck={handleShortMoviesCheck}
       />
       <LoadingIndicator />
-      <MoviesCardList movies={movies} savedMovies={savedMovies} onLike={onLike} onDislike={onDislike} currentUser={currentUser}/>
+      <MoviesCardList
+        noMoviesFound={noMoviesFound}
+        movies={movies}
+        savedMovies={savedMovies}
+        onLike={onLike}
+        onDislike={onDislike}
+        currentUser={currentUser}
+      />
     </main>
   );
 }

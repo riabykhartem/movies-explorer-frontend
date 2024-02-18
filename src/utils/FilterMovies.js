@@ -1,8 +1,5 @@
 
 function filterMovies(movies, searchValue, shortMoviesChecked) {
-  console.log(movies);
-  console.log(searchValue);
-  console.log(typeof shortMoviesChecked);
   if(searchValue === '' && !shortMoviesChecked){
     return movies;
   }

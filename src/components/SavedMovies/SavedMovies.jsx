@@ -4,7 +4,6 @@ import { LoadingIndicator } from "../../utils/LoadingIndicator";
 import { useLocation } from "react-router-dom";
 
 export default function SavedMovies({
-  movies,
   getFilteredMovies,
   onDislike,
   handleShortMoviesCheck,
@@ -22,7 +21,6 @@ export default function SavedMovies({
       />
       <LoadingIndicator />
       <MoviesCardList
-        movies={movies}
         onDislike={onDislike}
         savedMovies={savedMovies}
       />
