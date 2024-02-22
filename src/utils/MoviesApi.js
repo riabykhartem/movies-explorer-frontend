@@ -1,4 +1,3 @@
-import CurrentUserContext from "../components/context/CurrentUserContext";
 class MoviesApi {
   constructor(options) {
     this._url = options.url;

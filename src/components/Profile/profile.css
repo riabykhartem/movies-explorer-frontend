@@ -76,7 +76,18 @@ button[disabled]{
   margin: 20px 0 0 0;
   background-color: #3456f3;
 }
+
+.profile__button_type_cancel{
+  display: flex;
+  justify-content: center;
+  margin: 10px auto 0 auto;
+  width: 50%;
+  background-color: rgba(255, 43, 43, 0.736);
+  border-radius: 4px;
+}
 .profile__error-container {
+  display: flex;
+  flex-direction: column;
   margin: 189px 0 0 0;
   height: 14px;
   max-width: 410px;

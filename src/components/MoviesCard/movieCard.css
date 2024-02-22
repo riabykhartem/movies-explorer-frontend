@@ -43,7 +43,12 @@
 .moviesCard__like_active{
     background-image: url('../../images/likeActive.svg');
 }
-.moviesCard__like_active:hover{
+
+.moviesCard__like_active_saved{
+    background-image: url('../../images/likeActive.svg');
+}
+
+.moviesCard__like_active_saved:hover{
     background-image: url('../../images/likeRemove.svg');
 }
 
@@ -64,14 +69,13 @@
 }
 
 @media screen and (max-width: 769px) {
-    .moviesCard__like_active{
+    .moviesCard__like_active_saved{
         background-image: url('../../images/likeRemove.svg');
     }
     .moviesCard__image{
         max-width: 339px;
         width: 100%;
         height: 190px;
-
     }
 
 }

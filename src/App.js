@@ -1,4 +1,4 @@
-import { useNavigate, Route, Routes } from "react-router-dom";
+import { useNavigate, Route, Routes, Navigate } from "react-router-dom";
 
 import Header from "./components/Header/Header";
 import React, { useState, useEffect } from "react";
@@ -44,10 +44,10 @@ function App() {
     localStorage.getItem("shortSavedMoviesChecked") === "true" ? true : false
   );
 
-
   useEffect(() => {
     if (isLoggedIn) {
-      localStorage.getItem("movies") && setMovies(JSON.parse(localStorage.getItem("movies")));
+      // localStorage.getItem("movies") &&
+      //   setMovies(JSON.parse(localStorage.getItem("movies")));
 
       mainApi
         .getUserInfo(token)
@@ -68,11 +68,12 @@ function App() {
         .then((res) => {
           const filteredSavedMovies = filterMovies(
             res,
-            localStorage.getItem("searchValue") || "",
-            localStorage.getItem("shortSavedMoviesChecked") === "true" ? true : false
+            localStorage.getItem("savedMoviesSearchValue") || "",
+            localStorage.getItem("shortSavedMoviesChecked") === "true"
+              ? true
+              : false
           );
           setSavedMovies(filteredSavedMovies);
-          localStorage.setItem("savedMovies", JSON.stringify(filteredSavedMovies));
         })
         .catch((err) => {
           console.error(
@@ -81,9 +82,10 @@ function App() {
         });
     }
   }, [token, isLoggedIn, navigate]);
+
   function closeInfoToolTip() {
     setIsInfoToolTipOpened(false);
-    window.location.reload();
+    setInfoToolTipMessage("");
   }
 
   async function signUp(data) {
@@ -96,7 +98,7 @@ function App() {
               localStorage.setItem("jwt", res.token);
               setToken(res.token);
               setIsLoggedIn(true);
-              navigate("/", { replace: true });
+              navigate("/movies", { replace: true });
             }
           });
       });
@@ -143,10 +145,21 @@ function App() {
   function logOut() {
     localStorage.clear();
     setIsLoggedIn(false);
+    setMovies([]);
   }
 
   function handleShortMoviesCheck(checkState) {
     setShortMoviesChecked(checkState);
+    if (localStorage.getItem("allMovies")) {
+      const allMovies = JSON.parse(localStorage.getItem("allMovies"));
+      const filteredMovies = filterMovies(
+        allMovies,
+        localStorage.getItem("searchValue") || "",
+        checkState
+      );
+      setMovies(filteredMovies);
+      localStorage.setItem("movies", JSON.stringify(filteredMovies));
+    } else {
       moviesApi
         .getMovies()
         .then((movies) => {
@@ -161,15 +174,15 @@ function App() {
         .catch((err) => {
           console.log(`Error occurred while loading movies: ${err}`);
         });
-    
+    }
   }
 
-  function handleSavedShortMoviesCheck(checkState) {
-    console.log(checkState);
+  async function handleSavedShortMoviesCheck(checkState) {
+    const allSavedMovies = await moviesApi.getSavedMovies(token);
     setShortSavedMoviesChecked(checkState);
     localStorage.setItem("shortSavedMoviesChecked", checkState);
     const filteredSavedMovies = filterMovies(
-      savedMovies,
+      allSavedMovies,
       localStorage.getItem("searchValue") || "",
       checkState
     );
@@ -178,36 +191,54 @@ function App() {
 
   function getFilteredMovies(searchValue) {
     localStorage.setItem("searchValue", searchValue);
-    trackPromise(
-      moviesApi
-        .getMovies()
-        .then((res) => {
-          const filteredMovies = filterMovies(
-            res,
-            searchValue,
-            shortMoviesChecked
-          );
-          setMovies(filteredMovies);
-          if (filteredMovies.length === 0) {
-            setNoMoviesFound(true);
-          }
-          localStorage.setItem("movies", JSON.stringify(filteredMovies));
-        })
-        .catch((err) => {
-          console.log(`при загрузке фильмов произошла ошибка ${err}`);
-        })
-    );
+    if (localStorage.getItem("allMovies")) {
+      const allMovies = JSON.parse(localStorage.getItem("allMovies"));
+      const filteredMovies = filterMovies(
+        allMovies,
+        searchValue,
+        shortMoviesChecked
+      );
+      setMovies(filteredMovies);
+      localStorage.setItem("movies", JSON.stringify(filteredMovies));
+      if (filteredMovies.length === 0) {
+        setNoMoviesFound(true);
+      } else {
+        setNoMoviesFound(false);
+      }
+    } else {
+      trackPromise(
+        moviesApi
+          .getMovies()
+          .then((allMovies) => {
+            localStorage.setItem("allMovies", JSON.stringify(allMovies));
+            const filteredMovies = filterMovies(
+              allMovies,
+              searchValue,
+              shortMoviesChecked
+            );
+            setMovies(filteredMovies);
+            localStorage.setItem("movies", JSON.stringify(filteredMovies));
+            if (filteredMovies.length === 0) {
+              setNoMoviesFound(true);
+            } else {
+              setNoMoviesFound(false);
+            }
+          })
+          .catch((err) => {
+            console.log(`при загрузке фильмов произошла ошибка ${err}`);
+          })
+      );
+    }
   }
 
   async function filterSavedMovies(searchValue) {
-     const allSavedMovies = await moviesApi.getSavedMovies(token)
+    localStorage.setItem("savedMoviesSearchValue", searchValue);
+    const allSavedMovies = await moviesApi.getSavedMovies(token);
     const filteredMovies = filterMovies(
       allSavedMovies,
       searchValue,
       shortMoviesChecked
     );
-    setSavedMovies(filteredMovies);
-    localStorage.setItem("savedMovies", JSON.stringify(filteredMovies));
     setSavedMovies(filteredMovies);
   }
 
@@ -216,10 +247,6 @@ function App() {
       .saveMovie(movie, token)
       .then((res) => {
         setSavedMovies([res, ...savedMovies]);
-        localStorage.setItem(
-          "savedMovies",
-          JSON.stringify([res, ...savedMovies])
-        );
       })
       .catch((err) => {
         console.log(`при сохранении фильма произошла ошибка ${err}`);
@@ -231,7 +258,6 @@ function App() {
       await moviesApi.removeSavedMovie(moiveId, token);
       const newSavedMovies = savedMovies.filter((m) => m.movieId !== moiveId);
       setSavedMovies(newSavedMovies);
-      localStorage.setItem("savedMovies", JSON.stringify(newSavedMovies));
     } catch (err) {
       console.log(`при удалении фильма произошла ошибка ${err}`);
     }
@@ -299,8 +325,26 @@ function App() {
               </>
             }
           />
-          <Route path="/signup" element={<Register signUp={signUp} />} />
-          <Route path="/signin" element={<Login signIn={signIn} />} />
+          <Route
+            path="/signup"
+            element={
+              isLoggedIn ? (
+                <Navigate to="/movies" replace />
+              ) : (
+                <Register signUp={signUp} />
+              )
+            }
+          />
+          <Route
+            path="/signin"
+            element={
+              isLoggedIn ? (
+                <Navigate to="/movies" replace />
+              ) : (
+                <Login signIn={signIn} />
+              )
+            }
+          />
           <Route
             path="/profile"
             element={
@@ -309,7 +353,6 @@ function App() {
                 element={Profile}
                 isLoggedIn={isLoggedIn}
                 logOut={logOut}
-                currentUser={currentUser}
                 editProfile={editProfile}
               />
             }

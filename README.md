@@ -2,4 +2,4 @@
 
 Ссылка на задеплоенный на сервере проект: movies-explorer2023.nomoredomainsmonster.ru
 
-Ссылка на пулл реквест: https://github.com/riabykhartem/movies-explorer-frontend/pull/9
+Ссылка на пулл реквест: https://github.com/riabykhartem/movies-explorer-frontend/pull/11

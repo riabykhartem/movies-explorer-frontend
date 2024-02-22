@@ -8,9 +8,11 @@ export default function MoviesCard({
   savedMovies,
 }) {
   const location = useLocation();
-  const [isLiked, setIsLiked] = useState(
-    savedMovies.some((el) => el.movieId === movie.id)
-  );
+  const [isLiked, setIsLiked] = useState(false);
+  useEffect(() => {
+    setIsLiked(savedMovies.some((el) => el.movieId === movie.id));
+  }, [savedMovies, movie.id]);
+
 
   function handleLike() {
     if (location.pathname === "/movies") {
@@ -22,13 +24,13 @@ export default function MoviesCard({
         onLike(movie);
       }
     } else {
-      onDislike(movie.movieId);
       setIsLiked(false);
+      onDislike(movie.movieId);
     }
   }
   return (
     <article className="moviesCard__container">
-      <a href={movie.trailerLink} target="_blank" className="moviesCard__tailer-link link"> 
+      <a href={movie.trailerLink} target="_blank" rel="noreferrer" className="moviesCard__tailer-link link"> 
       <img
         className="moviesCard__image"
         src={
@@ -48,7 +50,7 @@ export default function MoviesCard({
               ? isLiked
                 ? "moviesCard__like_active"
                 : "moviesCard__like_inactive"
-              : "moviesCard__like_remove"
+              : "moviesCard__like_active_saved"
           }`}
         />
       </div>

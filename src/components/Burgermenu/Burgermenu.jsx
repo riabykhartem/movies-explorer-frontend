@@ -6,6 +6,12 @@ export default function BurgerMenu() {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  if(isMenuOpen){
+    document.body.style.overflow = "hidden";
+}
+else{
+    document.body.style.overflow = "auto";
+}
   function handleMenuClick() {
     setIsMenuOpen(!isMenuOpen);
   }

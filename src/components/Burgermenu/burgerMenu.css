@@ -71,7 +71,7 @@
 .burger-menu__account {
   display: flex;
   justify-content: center;
-  margin: 621px auto 0 auto;
+  margin: 50vh auto 0 auto;
 }
 @media screen and (max-width:321px){
   .burger-menu{

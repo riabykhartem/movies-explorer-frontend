@@ -1,7 +1,6 @@
 import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import { LoadingIndicator } from "../../utils/LoadingIndicator";
-import { useLocation } from "react-router-dom";
 
 export default function SavedMovies({
   getFilteredMovies,
@@ -10,7 +9,7 @@ export default function SavedMovies({
   isChecked,
   savedMovies,
 }) {
-  const location = useLocation();
+
 
   return (
     <main className="movies">

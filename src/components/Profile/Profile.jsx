@@ -1,15 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect, useContext } from "react";
 import { NavLink } from "react-router-dom";
 import Header from "../Header/Header";
 import { useForm } from "react-hook-form";
+import CurrentUserContext  from "../context/CurrentUserContext";
 
-export default function Profile({ isLoggedIn, logOut, currentUser, editProfile }) {
-
+export default function Profile({
+  isLoggedIn,
+  logOut,
+  editProfile,
+}) {
+  const currentUser = useContext(CurrentUserContext);
   const [editButtonToggled, setEditButtonToggled] = useState(false);
+  const [originalValues, setOriginalValues] = useState({});
   const {
     register,
     formState: { errors, isValid },
     handleSubmit,
+    watch,
   } = useForm({
     defaultValues: {
       name: currentUser.name,
@@ -17,81 +24,111 @@ export default function Profile({ isLoggedIn, logOut, currentUser, editProfile }
     },
     mode: "onChange",
   });
+
+  useEffect(() => {
+    if (editButtonToggled) {
+      setOriginalValues({
+        name: currentUser.name,
+        email: currentUser.email,
+      });
+    }
+  }, [editButtonToggled, currentUser]);
+
   const onSubmit = (data) => {
     editProfile(data);
-    setEditButtonToggled(!editButtonToggled);
+    setEditButtonToggled(false);
   };
+
+  const watchAllInputs = watch();
+
+  const isFormUpdated = Object.keys(watchAllInputs).some(
+    (key) => watchAllInputs[key] !== originalValues[key]
+  );
 
   return (
     <>
-    <Header isLoggedIn={isLoggedIn} />
-
-    <main className="profile page__content">
-      <h2 className="profile__heading">Привет, {currentUser.name}!</h2>
-      <form
-        className="profile__form"
-        id="a-form"
-        onSubmit={handleSubmit(onSubmit)}
-      >
-        <label className="profile__label">
-          Имя:
-          <input
-            {...register("name", {
-              required: true,
-            })}
-            className="profile__input profile__input_name"
-            type="text"
-            placeholder={currentUser.name}
-            disabled={!editButtonToggled}
-          />
-        </label>
-        <label className="profile__label ">
-          E-mail:
-          <input
-            {...register("email", {
-              required: true,
-              pattern: {
-                value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                message: "Некорректный адрес электронной почты",
-              },
-            })}
-            className="profile__input"
-            disabled={!editButtonToggled}
-            placeholder={currentUser.email}
-          />
-        </label>
-        {editButtonToggled ? (
-        <>
-          <div className="profile__error-container">
-            { errors?.name?.message || errors?.email?.message ? <span>{ "При обновлении профиля произошла ошибка."}</span> : null}
-          </div>
-          <button
-            type="submit"
-            disabled={!isValid}
-            form="a-form"
-            className="profile__button_type_submit button"
-          >
-            Сохранить
-          </button>
-        </>
-      ) : (
-        <>
-          <button
-            className="profile__button_type_edit link"
-            onClick={() => 
-              setEditButtonToggled(!editButtonToggled)
-            }
-          >
-            Редактировать
-          </button>
-          <NavLink onClick={logOut} to="/" className="profile__logout-button link">
-            Выйти из аккаунта
-          </NavLink>
-        </>
-      )}
-      </form>
-
-    </main>
+      <Header isLoggedIn={isLoggedIn} />
+      <main className="profile page__content">
+        <h2 className="profile__heading">Привет, {currentUser.name}!</h2>
+        <form
+          className="profile__form"
+          id="a-form"
+          onSubmit={handleSubmit(onSubmit)}
+        >
+          <label className="profile__label">
+            Имя:
+            <input
+              {...register("name", {
+                required: true,
+                minLength: {
+                  value: 2,
+                  message: "Имя должно быть не менее 2 символов",
+                },
+              })}
+              className="profile__input profile__input_name"
+              type="text"
+              placeholder={currentUser.name}
+              disabled={!editButtonToggled}
+            />
+          </label>
+          <label className="profile__label ">
+            E-mail:
+            <input
+              {...register("email", {
+                required: true,
+                pattern: {
+                  value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                  message: "Некорректный адрес электронной почты",
+                },
+              })}
+              className="profile__input"
+              disabled={!editButtonToggled}
+              placeholder={currentUser.email}
+            />
+          </label>
+          {editButtonToggled ? (
+            <>
+              <div className="profile__error-container">
+                {errors?.name?.message && (
+                  <span>
+                    {errors.name.message}
+                  </span>
+                )}
+                {errors?.email?.message && (
+                  <span>
+                    {errors.email.message}
+                  </span>
+                )}
+              </div>
+              <button
+                type="submit"
+                disabled={!isValid || !isFormUpdated}
+                form="a-form"
+                className="profile__button_type_submit button"
+              >
+                Сохранить
+              </button>
+              <button className={"profile__button_type_cancel"}onClick={() => setEditButtonToggled(false)}>отмена</button>
+            </>
+          ) : (
+            <>
+              <button
+                className="profile__button_type_edit link"
+                onClick={() => setEditButtonToggled(true)}
+              >
+                Редактировать
+              </button>
+              <NavLink
+                onClick={logOut}
+                to="/"
+                className="profile__logout-button link"
+              >
+                Выйти из аккаунта
+              </NavLink>
+            </>
+          )}
+        </form>
+      </main>
     </>
   );
 }
