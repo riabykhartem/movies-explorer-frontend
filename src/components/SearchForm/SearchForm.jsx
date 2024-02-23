@@ -12,9 +12,9 @@ export default function SearchForm({
   const [searchValue, setSearchValue] = useState(
     localStorage.getItem("searchValue") || ""
   );
-
+    
   const [savedMoviesSearchValue, setSavedMoviesSearchValue] = useState(
-    localStorage.getItem("savedMoviesSearchValue") || ""
+    ""
   );
   
 
@@ -27,7 +27,6 @@ export default function SearchForm({
     }
     else{    
     onSubmit(savedMoviesSearchValue)
-    localStorage.setItem("savedMoviesSearchValue", savedMoviesSearchValue);
     }
 
   }
@@ -63,7 +62,7 @@ export default function SearchForm({
               value={savedMoviesSearchValue}
               onChange={(e) => setSavedMoviesSearchValue(e.target.value)}
               type="text"
-              placeholder={`${localStorage.getItem("savedMoviesSearchValue") || "фильм"}`}
+              placeholder={"фильм"}
             />
             <input
               type="submit"

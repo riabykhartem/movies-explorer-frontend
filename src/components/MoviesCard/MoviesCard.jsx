@@ -13,7 +13,6 @@ export default function MoviesCard({
     setIsLiked(savedMovies.some((el) => el.movieId === movie.id));
   }, [savedMovies, movie.id]);
 
-
   function handleLike() {
     if (location.pathname === "/movies") {
       if (isLiked) {
@@ -28,6 +27,7 @@ export default function MoviesCard({
       onDislike(movie.movieId);
     }
   }
+  
   return (
     <article className="moviesCard__container">
       <a href={movie.trailerLink} target="_blank" rel="noreferrer" className="moviesCard__tailer-link link"> 
@@ -50,7 +50,7 @@ export default function MoviesCard({
               ? isLiked
                 ? "moviesCard__like_active"
                 : "moviesCard__like_inactive"
-              : "moviesCard__like_active_saved"
+              : "moviesCard__like_remove"
           }`}
         />
       </div>

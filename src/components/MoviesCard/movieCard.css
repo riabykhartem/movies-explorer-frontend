@@ -44,13 +44,6 @@
     background-image: url('../../images/likeActive.svg');
 }
 
-.moviesCard__like_active_saved{
-    background-image: url('../../images/likeActive.svg');
-}
-
-.moviesCard__like_active_saved:hover{
-    background-image: url('../../images/likeRemove.svg');
-}
 
 .moviesCard__like_inactive{
     background-image: url('../../images/likeInactive.svg');
@@ -69,9 +62,6 @@
 }
 
 @media screen and (max-width: 769px) {
-    .moviesCard__like_active_saved{
-        background-image: url('../../images/likeRemove.svg');
-    }
     .moviesCard__image{
         max-width: 339px;
         width: 100%;

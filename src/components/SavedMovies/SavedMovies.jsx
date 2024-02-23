@@ -8,12 +8,14 @@ export default function SavedMovies({
   handleShortMoviesCheck,
   isChecked,
   savedMovies,
+  savedMoviesSearchValue
 }) {
 
 
   return (
     <main className="movies">
       <SearchForm
+        savedMoviesSearchValue={savedMoviesSearchValue}
         isChecked={isChecked}
         onSubmit={getFilteredMovies}
         handleShortMoviesCheck={handleShortMoviesCheck}

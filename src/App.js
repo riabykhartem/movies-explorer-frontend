@@ -34,21 +34,18 @@ function App() {
       : []
   );
   const [noMoviesFound, setNoMoviesFound] = useState(false);
-  const [shortMoviesChecked, setShortMoviesChecked] = useState(
-    localStorage.getItem("shortMoviesChecked") === "true" ? true : false
-  );
+  const [shortMoviesChecked, setShortMoviesChecked] = useState(false);
 
   //стейты SavedMovies
   const [savedMovies, setSavedMovies] = useState([]);
-  const [shortSavedMoviesChecked, setShortSavedMoviesChecked] = useState(
-    localStorage.getItem("shortSavedMoviesChecked") === "true" ? true : false
-  );
+  const [shortSavedMoviesChecked, setShortSavedMoviesChecked] = useState( false );
+  const [savedMoviesSearchValue, setSavedMoviesSearchValue] = useState('')
 
   useEffect(() => {
-    if (isLoggedIn) {
-      // localStorage.getItem("movies") &&
-      //   setMovies(JSON.parse(localStorage.getItem("movies")));
+    setShortSavedMoviesChecked(false);
+    setSavedMoviesSearchValue('');
 
+    if (isLoggedIn) {
       mainApi
         .getUserInfo(token)
         .then((res) => {
@@ -68,10 +65,8 @@ function App() {
         .then((res) => {
           const filteredSavedMovies = filterMovies(
             res,
-            localStorage.getItem("savedMoviesSearchValue") || "",
-            localStorage.getItem("shortSavedMoviesChecked") === "true"
-              ? true
-              : false
+            "",
+            false
           );
           setSavedMovies(filteredSavedMovies);
         })
@@ -180,10 +175,9 @@ function App() {
   async function handleSavedShortMoviesCheck(checkState) {
     const allSavedMovies = await moviesApi.getSavedMovies(token);
     setShortSavedMoviesChecked(checkState);
-    localStorage.setItem("shortSavedMoviesChecked", checkState);
     const filteredSavedMovies = filterMovies(
       allSavedMovies,
-      localStorage.getItem("searchValue") || "",
+      savedMoviesSearchValue,
       checkState
     );
     setSavedMovies(filteredSavedMovies);
@@ -232,12 +226,12 @@ function App() {
   }
 
   async function filterSavedMovies(searchValue) {
-    localStorage.setItem("savedMoviesSearchValue", searchValue);
+    setSavedMoviesSearchValue(searchValue);
     const allSavedMovies = await moviesApi.getSavedMovies(token);
     const filteredMovies = filterMovies(
       allSavedMovies,
       searchValue,
-      shortMoviesChecked
+      shortSavedMoviesChecked
     );
     setSavedMovies(filteredMovies);
   }
@@ -312,6 +306,7 @@ function App() {
               <>
                 <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
                 <ProtectedRouteElement
+                savedMoviesSearchValue={savedMoviesSearchValue}
                   loggedIn={isLoggedIn}
                   element={SavedMovies}
                   isLoggedIn={isLoggedIn}
@@ -320,6 +315,7 @@ function App() {
                   onDislike={removeSavedMovie}
                   handleShortMoviesCheck={handleSavedShortMoviesCheck}
                   isChecked={shortSavedMoviesChecked}
+                  setShortSavedMoviesChecked={setShortSavedMoviesChecked}
                 />
                 <Footer />
               </>
