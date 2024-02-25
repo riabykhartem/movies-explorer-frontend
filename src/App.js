@@ -237,7 +237,7 @@ function App() {
   }
 
   function saveMovie(movie) {
-    moviesApi
+    return moviesApi
       .saveMovie(movie, token)
       .then((res) => {
         setSavedMovies([res, ...savedMovies]);
@@ -249,9 +249,9 @@ function App() {
 
   async function removeSavedMovie(moiveId) {
     try {
-      await moviesApi.removeSavedMovie(moiveId, token);
       const newSavedMovies = savedMovies.filter((m) => m.movieId !== moiveId);
       setSavedMovies(newSavedMovies);
+      await moviesApi.removeSavedMovie(moiveId, token);
     } catch (err) {
       console.log(`при удалении фильма произошла ошибка ${err}`);
     }

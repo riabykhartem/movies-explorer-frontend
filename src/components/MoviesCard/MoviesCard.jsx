@@ -12,22 +12,25 @@ export default function MoviesCard({
   useEffect(() => {
     setIsLiked(savedMovies.some((el) => el.movieId === movie.id));
   }, [savedMovies, movie.id]);
+  const [isDisabled, setIsDisabled] = useState(false);
 
-  function handleLike() {
+  async function handleLike() {
+    setIsDisabled(true);
     if (location.pathname === "/movies") {
       if (isLiked) {
         setIsLiked(false);
-        onDislike(movie.id);
+         await onDislike(movie.id);
       } else {
         setIsLiked(true);
-        onLike(movie);
+        await onLike(movie);
       }
     } else {
+      await onDislike(movie.movieId);
       setIsLiked(false);
-      onDislike(movie.movieId);
     }
+    setIsDisabled(false);
   }
-  
+
   return (
     <article className="moviesCard__container">
       <a href={movie.trailerLink} target="_blank" rel="noreferrer" className="moviesCard__tailer-link link"> 
@@ -45,6 +48,7 @@ export default function MoviesCard({
         <h2 className="moviesCard__title">{movie.nameRU}</h2>
         <button
           onClick={handleLike}
+          disabled={isDisabled}
           className={`moviesCard__like button ${
             location.pathname === "/movies"
               ? isLiked
