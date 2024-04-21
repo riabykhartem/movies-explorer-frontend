@@ -53,7 +53,7 @@ class MainApi{
 }
 
 const mainApi = new MainApi({
-    url: 'https://api.movies-explorer2023.nomoredomainsmonster.ru',
+    url: 'https://api.artemriabykh.nomoredomainsmonster.ru',
     headers: {
         'Content-Type': 'application/json',
         authorization: `Bearer ${localStorage.getItem('jwt')}`

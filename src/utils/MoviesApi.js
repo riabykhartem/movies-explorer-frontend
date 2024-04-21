@@ -57,7 +57,7 @@ class MoviesApi {
 }
 
 const moviesApi = new MoviesApi({
-  url: "https://api.movies-explorer2023.nomoredomainsmonster.ru",
+  url: "https://api.artemriabykh.nomoredomainsmonster.ru",
 });
 
 export default moviesApi;
