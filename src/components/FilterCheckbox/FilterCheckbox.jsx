@@ -9,7 +9,7 @@ export default function FilterCheckbox({handleShortMoviesCheck, isChecked}) {
             <label className="filterCheckbox__label" htmlFor="filterCheckbox">
                 <input className="filterCheckbox__invisible-checkbox button" checked={isChecked} onChange={handleCheckBox} type="checkbox" id="filterCheckbox"/>
                 <span className="filterCheckbox__visible-checkbox"></span>
-                <span className="filterCheckbox__text">Короткометражки</span>
+                <span className="filterCheckbox__text">Short films</span>
             </label>
         </section>
     )

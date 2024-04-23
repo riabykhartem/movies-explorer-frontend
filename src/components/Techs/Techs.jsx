@@ -2,12 +2,11 @@ export default function Techs() {
   return (
     <section className="techs">
       <div className="page__content">
-        <h2 className="techs__headline">Технологии</h2>
+        <h2 className="techs__headline">Tech Stack</h2>
         <div className="techs__text-container">
-          <h3 className="techs__title">7 технологий</h3>
+          <h3 className="techs__title">7 technologies</h3>
           <p className="techs__paragraph">
-            На курсе веб-разработки мы освоили технологии, которые применили в
-            дипломном проекте.
+          In the web development course, we mastered technologies that we applied in the diploma project.
           </p>
         </div>
         <ul className="techs__techs-list">

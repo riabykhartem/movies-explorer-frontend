@@ -11,7 +11,7 @@ export default function NavTab({ isLoggedIn }) {
               location.pathname === '/' ? "navTab__container_place_homepage" : "navTab__container_place_movies"
             } ${location.pathname === "/movies" ? "navTab__link_active" : ""}`}
           >
-            Фильмы
+            Movies
           </NavLink>
           <NavLink
             to="/saved-movies"
@@ -19,6 +19,6 @@ export default function NavTab({ isLoggedIn }) {
               location.pathname === '/' ? "navTab__container_place_homepage" : "navTab__container_place_movies"
             } ${location.pathname === "/saved-movies" ? "navTab__link_active" : ""}`}
           >
-            Сохранённые фильмы
+            Saved Movies
           </NavLink>
       </nav> )}

@@ -41,11 +41,11 @@ export default function SearchForm({
               value={searchValue}
               onChange={(e) => setSearchValue(e.target.value)}
               type="text"
-              placeholder={`${localStorage.getItem("searchValue") || "фильм"}`}
+              placeholder={`${localStorage.getItem("searchValue") || "movies"}`}
             />
             <input
               type="submit"
-              value="Найти"
+              value="search"
               className="searchForm__button button"
             ></input>
           </form>
@@ -62,11 +62,11 @@ export default function SearchForm({
               value={savedMoviesSearchValue}
               onChange={(e) => setSavedMoviesSearchValue(e.target.value)}
               type="text"
-              placeholder={"фильм"}
+              placeholder={"search"}
             />
             <input
               type="submit"
-              value="Найти"
+              value="search"
               className="searchForm__button button"
             ></input>
           </form>

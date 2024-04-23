@@ -49,7 +49,7 @@ else{
                 : ""
             } `}
           >
-            Фильмы
+            Movies
           </NavLink>
           <NavLink
             to="/saved-movies"
@@ -60,7 +60,7 @@ else{
                 : ""
             }`}
           >
-            Сохранённые фильмы
+            Saved movies
           </NavLink>
         </nav>
         <NavLink
@@ -68,7 +68,7 @@ else{
           onClick={handleMenuClick}
           className={`burger-menu__account`}
         >
-          <img src={accountLogo} alt="аккаунт" />
+          <img src={accountLogo} alt="accaount" />
         </NavLink>
       </div>
     </>

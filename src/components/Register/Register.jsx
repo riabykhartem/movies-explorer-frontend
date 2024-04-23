@@ -21,14 +21,14 @@ const Register = ({signUp}) => {
   return (
     <main className="register">
       <NavLink to="/" className="register__logo link" />
-      <h2 className="register__heading">Добро пожаловать!</h2>
+      <h2 className="register__heading">Welcome!</h2>
       <form className="register__form" onSubmit={handleSubmit(onSubmit)}>
         <label className="register__label">
-          Имя:
+          Name:
           <input
-            placeholder="Виталий"
+            placeholder="John Doe"
             {...register("name", {
-              required: "это поле нужно заполнить",
+              required: "this filed is required",
             })}
             className="register__input register__input_name"
             type="text"
@@ -36,7 +36,7 @@ const Register = ({signUp}) => {
         </label>
         <div className="register__error-container">
           {errors?.name && (
-            <span>{errors.name.message || "что-то пошло не так"}</span>
+            <span>{errors.name.message || "something went wrong"}</span>
           )}
         </div>
         <label className="register__label ">
@@ -44,10 +44,10 @@ const Register = ({signUp}) => {
           <input
           placeholder="pochta@yandex.ru|"
             {...register("email", {
-              required: "Это поле нужно заполнить",
+              required: "this field is required",
               pattern: {
                 value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                message: "Некорректный адрес электронной почты",
+                message: "email address is not valid",
               },
             })}
             className="register__input"
@@ -55,15 +55,15 @@ const Register = ({signUp}) => {
         </label>
         <div className="register__error-container">
           {errors?.email && (
-            <span>{errors.email.message || "Что-то пошло не так"}</span>
+            <span>{errors.email.message || "something went wrong"}</span>
           )}
         </div>
         <label className="register__label">
-          Пароль:
+          Password:
           <input
           placeholder="••••••••••••••"
             {...register("password", {
-              required: "Это поле нужно заполнить",
+              required: "this field is required",
             })}
             className="register__input"
             type="password"
@@ -71,7 +71,7 @@ const Register = ({signUp}) => {
         </label>
         <div className="register__error-container">
           {errors?.password && (
-            <span>{errors.password.message || "Что-то пошло не так"}</span>
+            <span>{errors.password.message || "something went wrong"}</span>
           )}
         </div>
         <button
@@ -79,14 +79,14 @@ const Register = ({signUp}) => {
           type="submit"
           disabled={!isValid && !lockSubmit}
         >
-          Зарегистрироваться
+          Sign up
         </button>
       </form>
       <p className="login__paragraph">
-        Уже зарегистрированы?{" "}
+        Already have an account?{" "}
         {
           <NavLink to="/signin" className="login__navlink link">
-            Войти
+            Sign in
           </NavLink>
         }
       </p>

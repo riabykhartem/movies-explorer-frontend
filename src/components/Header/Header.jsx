@@ -32,13 +32,13 @@ export default function Header({ isLoggedIn }) {
               to="/signup"
               className={`header__signup-button ${location.pathname === '/' && 'header__signup-button_place_homepage'} link`}
             >
-              Регистрация
+              Sign up
             </NavLink>
             <NavLink
               to="/signin"
               className="header__signin-button button"
             >
-              Войти
+              Log in
             </NavLink>
           </div>
         )}

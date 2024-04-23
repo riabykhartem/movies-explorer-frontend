@@ -2,24 +2,22 @@ export default function AboutProject() {
   return (
     <section className="aboutProject" id="about">
       <div className="page__content aboutProject__container ">
-        <h2 className="aboutProject__headline">О проекте</h2>
+        <h2 className="aboutProject__headline">About the project</h2>
         <div className="aboutProject__grid-container">
-          <p className="aboutProject__title aboutProject__title_position_left" >Дипломный проект включал 5 этапов</p>
+          <p className="aboutProject__title aboutProject__title_position_left" >The project consisted of 5 stages</p>
           <p className="aboutProject__title aboutProject__title_position_right">
-            На выполнение диплома ушло 5 недель
+          The completion of the project took 5 weeks.
           </p>
           <p className="aboutProject__paragraph aboutProject__paragraph_position_left">
-            Составление плана, работу над бэкендом, вёрстку, добавление
-            функциональности и финальные доработки.
+          Creating a plan, working on the backend, layout, adding functionality, and final adjustments.
           </p>
           <p className="aboutProject__paragraph aboutProject__paragraph_position_right">
-            У каждого этапа был мягкий и жёсткий дедлайн, которые нужно было
-            соблюдать, чтобы успешно защититься.
+          At each stage, there were both soft and hard deadlines that had to be met in order to successfully defend the project.
           </p>
         </div>
         <div className="aboutProject__time-block">
-          <p className="aboutProject__time-title aboutProject__time-title_background_green">1 неделя</p>
-          <p className="aboutProject__time-title aboutProject__time-title_background_gray">4 недели</p>
+          <p className="aboutProject__time-title aboutProject__time-title_background_green">1 week</p>
+          <p className="aboutProject__time-title aboutProject__time-title_background_gray">4 weeks</p>
           <p className="aboutProject__time-subtitle ">Back-end</p>
           <p className="aboutProject__time-subtitle ">Front-end</p>
         </div>

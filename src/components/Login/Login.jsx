@@ -1,6 +1,5 @@
 import { useForm } from "react-hook-form";
 import { NavLink } from "react-router-dom";
-import mainApi from "../../utils/MainApi";
 export default function Login({ signIn }) {
   const {
     register,
@@ -17,17 +16,17 @@ export default function Login({ signIn }) {
   return (
     <section className="login">
       <NavLink to="/" className="login__logo link" />
-      <h2 className="login__heading">Рады видеть!</h2>
+      <h2 className="login__heading">Glad to see you!</h2>
       <form className="login__form" onSubmit={handleSubmit(onSubmit)}>
         <label className="login__label ">
           E-mail:
           <input
             placeholder="pochta@yandex.ru"
             {...register("email", {
-              required: "Это поле нужно заполнить",
+              required: "This field is required",
               pattern: {
                 value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                message: "Некорректный адрес электронной почты",
+                message: "Email address is not valid",
               },
             })}
             className="login__input"
@@ -39,7 +38,7 @@ export default function Login({ signIn }) {
           )}
         </div>
         <label className="login__label">
-          Пароль:
+          Password:
           <input
             placeholder="••••••••••••••"
             {...register("password", {
@@ -59,14 +58,14 @@ export default function Login({ signIn }) {
           type="submit"
           disabled={!isValid}
         >
-          Войти
+          Log in
         </button>
       </form>
       <p className="login__paragraph">
-        Ещё не зарегистрированы?{" "}
+        Not signed up yet?{" "}
         {
           <NavLink to="/signup" className="login__navlink link">
-            Регистрация
+            Sign up
           </NavLink>
         }
       </p>

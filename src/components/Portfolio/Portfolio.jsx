@@ -2,7 +2,7 @@ import arrow from "../../images/linkIcon.svg"
 export default function Portfolio() {
   return (
     <section className="page__content portfolio">
-      <h2 className="portfolio__headline">Портфолио</h2>
+      <h2 className="portfolio__headline">Portofolio</h2>
       <ul className="portfolio__links">
         <li className="portfolio_list-item">
           <a
@@ -11,7 +11,7 @@ export default function Portfolio() {
             rel="noreferrer"
             className="portfolio__link link"
           >
-            <h3 className="portfolio__link_place_text">Статичный сайт</h3>
+            <h3 className="portfolio__link_place_text">Static page</h3>
             <img src={arrow} className="portfolio__arrow" alt="стрелка ссылки"></img>
           </a>
         </li>
@@ -22,7 +22,7 @@ export default function Portfolio() {
             rel="noreferrer"
             className="portfolio__link link"
           >
-            <h3 className="portfolio__link_place_text">Адаптивный сайт</h3>
+            <h3 className="portfolio__link_place_text">Responsive page</h3>
             <img src={arrow} className="portfolio__arrow" alt="стрелка ссылки"></img>
           </a>
         </li>
@@ -35,7 +35,7 @@ export default function Portfolio() {
             className="portfolio__link link"
           >
             <h3 className="portfolio__link_place_text">
-              Одностраничное приложение
+            Single-Page Application
             </h3>
             <img src={arrow} className="portfolio__arrow" alt="стрелка ссылки"></img>
           </a>

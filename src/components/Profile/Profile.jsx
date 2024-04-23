@@ -56,13 +56,13 @@ export default function Profile({
           onSubmit={handleSubmit(onSubmit)}
         >
           <label className="profile__label">
-            Имя:
+            Name:
             <input
               {...register("name", {
                 required: true,
                 minLength: {
                   value: 2,
-                  message: "Имя должно быть не менее 2 символов",
+                  message: "Must be at least 2 characters",
                 },
               })}
               className="profile__input profile__input_name"
@@ -78,7 +78,7 @@ export default function Profile({
                 required: true,
                 pattern: {
                   value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                  message: "Некорректный адрес электронной почты",
+                  message: "email address is not valid",
                 },
               })}
               className="profile__input"
@@ -106,7 +106,7 @@ export default function Profile({
                 form="a-form"
                 className="profile__button_type_submit button"
               >
-                Сохранить
+                Save
               </button>
               <button className={"profile__button_type_cancel"}onClick={() => setEditButtonToggled(false)}>отмена</button>
             </>
@@ -116,14 +116,14 @@ export default function Profile({
                 className="profile__button_type_edit link"
                 onClick={() => setEditButtonToggled(true)}
               >
-                Редактировать
+                Edit
               </button>
               <NavLink
                 onClick={logOut}
                 to="/"
                 className="profile__logout-button link"
               >
-                Выйти из аккаунта
+                Sign out
               </NavLink>
             </>
           )}
