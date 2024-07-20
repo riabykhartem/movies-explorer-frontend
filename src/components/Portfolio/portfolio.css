@@ -1,16 +1,18 @@
 .portfolio {
   display: flex;
   flex-direction: column;
-  margin: 100px auto 115px auto;
+  margin: 0 auto 115px auto;
 }
 
 .portfolio__headline {
+  letter-spacing: -0.88px;
+  font-size: 22px;
+  width: 100%;
+  line-height: 27px;
+  margin: 50px 0 0 0;
+  padding: 0 0 23px 0;
   font-weight: 400;
-  margin: 0;
-  font-size: 18px;
-  line-height: 20px;
-  color: #a0a0a0;
-  font-feature-settings: "clig" off, "liga" off;
+  border-bottom: 1px solid #000000;
 }
 
 .portfolio__links {

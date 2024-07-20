@@ -4,19 +4,21 @@ export default function Techs() {
       <div className="page__content">
         <h2 className="techs__headline">Tech Stack</h2>
         <div className="techs__text-container">
-          <h3 className="techs__title">7 technologies</h3>
-          <p className="techs__paragraph">
-          In the web development course, we mastered technologies that we applied in the diploma project.
-          </p>
+          <h3 className="techs__title">Including, but not limited to:</h3>
+
         </div>
         <ul className="techs__techs-list">
-          <li className="techs__tech">HTML</li>
-          <li className="techs__tech">CSS</li>
-          <li className="techs__tech">JS</li>
+
+          <li className="techs__tech">JavaScript</li>
+          <li className="techs__tech">TypeScript</li>
           <li className="techs__tech">React</li>
           <li className="techs__tech">Git</li>
           <li className="techs__tech">Express.js</li>
-          <li className="techs__tech">mongoDB</li>
+          <li className="techs__tech">MongoDB</li>
+          <li className="techs__tech">HTML</li>
+          <li className="techs__tech">CSS</li>
+          <li className="techs__tech">WordPress</li>
+
         </ul>
       </div>
     </section>

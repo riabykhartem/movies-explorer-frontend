@@ -6,8 +6,9 @@ export default function AboutMe(){
             <div className="aboutMe__main">
             <div className="aboutMe__text-container">
                 <h3 className="aboutMe__name">Artem Riabykh</h3>
-                <p className="aboutMe__title">Front-end developer, 27 years old</p>
-                <p className="aboutMe__text"> Originally hailing from Moscow, Russia, I earned my bachelor's degree in linguistics from Moscow State Linguistics University in 2021. Subsequently, I embarked on a new journey to the USA through the Green Card lottery. Immersed in the vibrant atmosphere of Chicago, I've delved into the realm of web development, crafting numerous projects, including this one. Outside of coding, I find solace in learning JavaScript and exploring the great outdoors through hiking.</p>
+                <p className="aboutMe__title">Front-End Developer</p>
+                <p className="aboutMe__text"> I am a front-end developer with over a year of experience in designing and developing responsive and user-friendly websites. I’m responsible for translating UI/UX designs into interactive web pages using various frameworks and tools. </p>
+                <p className="aboutMe__text"> My main expertise lies in JavaScript, React, HTML/CSS, but I also have experience with backend technologies like Node.js and MongoDB. I’m always expanding my skillset by exploring new framework and technologies, which helps me stay up to date within the tech field. </p>
                 <a href="https://github.com/riabykhartem" target="_blank" className="aboutMe__link link" rel="noreferrer">Github</a>
             </div>
             <img src={myPhoto} alt="моя фотография" className='aboutMe__photo' />
